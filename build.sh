@@ -1,4 +1,4 @@
 #!/bin/sh
 cd ../
 mkdir output
-cp -r ./final-project-sample/* ./output
+cp -r ./Final-Project-Sample/* ./output
