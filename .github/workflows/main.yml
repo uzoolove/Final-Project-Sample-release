@@ -21,8 +21,8 @@ jobs:
           API_TOKEN_GITHUB: ${{ secrets.TOKEN_YONG }}
         with:
           source-directory: 'output'
-          destination-github-username: FEBC-13
-          destination-repository-name: Final-Project-Sample
+          destination-github-username: uzoolove
+          destination-repository-name: Final-Project-Sample-release
           user-email: ${{ secrets.EMAIL_YONG }}
           # commit-message: ${{ github.event.commits[0].message }}
           target-branch: main
