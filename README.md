@@ -1,5 +1,5 @@
 # FrontEnd BootCamp 13기 파이널 프로젝트 가이드
-* v.05
+* v.06
 
 ## 목차
 
