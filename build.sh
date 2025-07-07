@@ -5,6 +5,5 @@ cd ../
 mkdir output
 # 레포지토리 하위의 모든 폴더와 파일을 output 하위로 복사(.gitignore, .github 같은 숨김 파일/폴더는 제외)
 cp -r ./Final-Project-Sample/* ./output
-# output 폴더를 레포지토리 하위에 복사
-# cp -r ./output ./Final-Project-Sample/
+# output 폴더를 레포지토리 하위로 이동
 mv ./output ./Final-Project-Sample/
