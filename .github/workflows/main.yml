@@ -18,13 +18,13 @@ jobs:
         id: push_directory
         uses: cpina/github-action-push-to-another-repository@main
         env:
-          API_TOKEN_GITHUB: ${{ secrets.MY_TOKEN }}
+          API_TOKEN_GITHUB: ${{ secrets.TOKEN_YONG }}
         with:
           source-directory: 'output'
           destination-github-username: FEBC-13
           destination-repository-name: Final-Project-Sample
-          # user-email: ${{ secrets.EMAIL }}
-          commit-message: ${{ github.event.commits[0].message }}
+          user-email: ${{ secrets.EMAIL_YONG }}
+          # commit-message: ${{ github.event.commits[0].message }}
           target-branch: main
       - name: Test get variable exported by push-to-another-repository
         run: echo $DESTINATION_CLONED_DIRECTORY
