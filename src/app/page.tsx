@@ -1,5 +1,5 @@
 export default function Home() {
   return (
-    <h1>final-project-sample</h1>
+    <h1>Final-Project-Sample v02</h1>
   );
 }
