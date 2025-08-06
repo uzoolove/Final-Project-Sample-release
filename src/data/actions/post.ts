@@ -39,6 +39,37 @@ export async function createPost(state: ApiRes<Post> | null, formData: FormData)
     });
 
     data = await res.json();
+
+    if(data.ok){
+      // 현재 시간에서 1시간 후 "2025.08.05 03:43:01" 형식으로 변환
+      const now = new Date();
+      now.setHours(now.getHours() + 1);
+
+      const formatted = now.toISOString()
+        .replace('T', ' ')
+        .substring(0, 19)
+        .replace(/-/g, '.');
+
+      console.log(formatted);
+
+      // 게시글 생성 후 1시간 후에 통계를 이메일로 전송하도록 스케줄러 등록
+      const schedulerRes = await fetch(`${API_URL}/scheduler`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Client-Id': CLIENT_ID,
+          'Authorization': `Bearer ${accessToken}`,
+        },
+        body: JSON.stringify({
+          name: '이메일 전송',
+          description: '게시글 생성 후 1시간 후 통계 이메일 전송',
+          endpoint: `https://lion-board-tau.vercel.app/api/scheduler/posts/${data.item._id}`,
+          time: formatted,
+        }),
+      });
+
+      console.log(schedulerRes);
+    }
     
   }catch(error){ // 네트워크 오류 처리
     console.error(error);

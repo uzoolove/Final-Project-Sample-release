@@ -1,3 +1,5 @@
+'use server';
+
 import { ApiResPromise, Post, PostReply } from "@/types";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
