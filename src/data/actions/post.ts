@@ -41,16 +41,26 @@ export async function createPost(state: ApiRes<Post> | null, formData: FormData)
     data = await res.json();
 
     if(data.ok){
-      // 현재 시간에서 1시간 후 "2025.08.05 03:43:01" 형식으로 변환
+      // 현재 시간에서 10초 후 한국 시간으로 생성
       const now = new Date();
-      now.setHours(now.getHours() + 1);
+      now.setSeconds(now.getSeconds() + 10); // 10초 후
 
-      const formatted = now.toISOString()
-        .replace('T', ' ')
-        .substring(0, 19)
-        .replace(/-/g, '.');
+      // UTC 시간에 9시간을 더해서 한국 시간으로 변환
+      const koreaTime = new Date(now.getTime() + (9 * 60 * 60 * 1000));
+      
+      // 한국 시간을 "2025.08.05 03:43:01" 형식으로 생성
+      const year = koreaTime.getUTCFullYear();
+      const month = String(koreaTime.getUTCMonth() + 1).padStart(2, '0');
+      const day = String(koreaTime.getUTCDate()).padStart(2, '0');
+      const hours = String(koreaTime.getUTCHours()).padStart(2, '0');
+      const minutes = String(koreaTime.getUTCMinutes()).padStart(2, '0');
+      const seconds = String(koreaTime.getUTCSeconds()).padStart(2, '0');
+      
+      const formatted = `${year}.${month}.${day} ${hours}:${minutes}:${seconds}`;
 
-      console.log(formatted);
+      console.log('현재 UTC 시간:', now.toISOString());
+      console.log('생성된 한국 시간:', formatted);
+      console.log('한국 시간 UTC 객체:', koreaTime.toISOString());
 
       // 게시글 생성 후 1시간 후에 통계를 이메일로 전송하도록 스케줄러 등록
       const schedulerRes = await fetch(`${API_URL}/scheduler`, {
