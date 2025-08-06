@@ -19,7 +19,7 @@ export default function SignupForm() {
     }else if(state?.ok === 0 && !state?.errors){ // 입력값 검증에러가 아닌 경우
       alert(state?.message);
     }
-  }, [state]);
+  }, [state, router]);
 
   return (
     <form action={ formAction }>

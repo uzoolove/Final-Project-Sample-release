@@ -35,7 +35,7 @@ export default function UserInfo() {
       // Auth.js 세션 강제 업데이트
       update();
     }
-  }, [refresh]);
+  }, [refresh, update, searchParams, pathname, router]);
 
   /**
    * 로그아웃 처리 함수

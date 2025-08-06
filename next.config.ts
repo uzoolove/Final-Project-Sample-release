@@ -35,6 +35,11 @@ const nextConfig: NextConfig = {
         hostname: '*.githubusercontent.com',
         pathname: '**',
       },
+      {
+        protocol: 'https',
+        hostname: '*.cloudinary.com',
+        pathname: '**',
+      },
     ],
   },
   experimental: {

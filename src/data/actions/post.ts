@@ -42,7 +42,7 @@ export async function createPost(state: ApiRes<Post> | null, formData: FormData)
     
   }catch(error){ // 네트워크 오류 처리
     console.error(error);
-    return { ok: 0, message: '일시적인 네트워크 문제로 등록에 실패했습니다.' };
+    return { ok: 0, message: '일시적인 네트워크 문제가 발생했습니다. 잠시후 다시 이용해 주시기 바랍니다.' };
   }
 
   // redirect는 예외를 throw 하는 방식이라서 try 문에서 사용하면 catch로 처리되므로 제대로 동작하지 않음
@@ -90,7 +90,7 @@ export async function createReply(state: ApiRes<PostReply> | null, formData: For
 
   }catch(error){ // 네트워크 오류 처리
     console.error(error);
-    return { ok: 0, message: '일시적인 네트워크 문제가 발생했습니다.' };
+    return { ok: 0, message: '일시적인 네트워크 문제가 발생했습니다. 잠시후 다시 이용해 주시기 바랍니다.' };
   }
   
   if (data.ok) {
@@ -139,7 +139,7 @@ export async function updatePost(state: ApiRes<Post> | null, formData: FormData)
     
   }catch(error){ // 네트워크 오류 처리
     console.error(error);
-    return { ok: 0, message: '일시적인 네트워크 문제가 발생했습니다.' };
+    return { ok: 0, message: '일시적인 네트워크 문제가 발생했습니다. 잠시후 다시 이용해 주시기 바랍니다.' };
   }
 
   // 수정 성공 시 해당 게시글 상세 페이지로 이동
@@ -185,7 +185,7 @@ export async function deletePost(state: ApiRes<Post> | null, formData: FormData)
     
   }catch(error){ // 네트워크 오류 처리
     console.error(error);
-    return { ok: 0, message: '일시적인 네트워크 문제가 발생했습니다.' };
+    return { ok: 0, message: '일시적인 네트워크 문제가 발생했습니다. 잠시후 다시 이용해 주시기 바랍니다.' };
   }
 
   if (data.ok) {
@@ -228,7 +228,7 @@ export async function deleteReply(state: ApiRes<PostReply> | null, formData: For
     
   }catch(error){ // 네트워크 오류 처리
     console.error(error);
-    return { ok: 0, message: '일시적인 네트워크 문제가 발생했습니다.' };
+    return { ok: 0, message: '일시적인 네트워크 문제가 발생했습니다. 잠시후 다시 이용해 주시기 바랍니다.' };
   }
 
   if (data.ok) {

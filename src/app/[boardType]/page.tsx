@@ -91,7 +91,9 @@ export default async function ListPage({ params }: ListPageProps) {
               res.item.map((post: Post) => (
                 <ListItem key={post._id} boardType={boardType} post={post} />
               )) : 
-              <p>{ res.message }</p>
+              <tr>
+                <td colSpan={6} className="p-2 text-center">{ res.message }</td>
+              </tr>
             }
 
           </tbody>

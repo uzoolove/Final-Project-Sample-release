@@ -1,6 +1,7 @@
 import UserInfo from "@/components/common/UserInfo";
 import Image from "next/image";
 import Link from "next/link";
+import { Suspense } from "react";
 
 export default function Header() {
 
@@ -23,7 +24,9 @@ export default function Header() {
 
         <div className="w-1/2 order-1 flex justify-end items-center md:order-2 md:w-auto">
 
-          <UserInfo />
+          <Suspense fallback={<span>로딩중</span>}>
+            <UserInfo />
+          </Suspense>
 
           <button
             type="button"

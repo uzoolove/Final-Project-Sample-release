@@ -46,6 +46,8 @@ export interface Post {
   repliesCount: number,
   // 댓글 목록
   replies?: PostReply[],
+  // 북마크 개수
+  bookmarks?: number,
   // 게시글 생성일
   createdAt: string,
   // 게시글 수정일

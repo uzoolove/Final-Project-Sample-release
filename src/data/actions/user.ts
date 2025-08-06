@@ -61,7 +61,7 @@ export async function createUser(state: ApiRes<User> | null, formData: FormData)
     
   }catch(error){ // 네트워크 오류 처리
     console.error(error);
-    return { ok: 0, message: '일시적인 네트워크 문제가 발생했습니다.' };
+    return { ok: 0, message: '일시적인 네트워크 문제가 발생했습니다. 잠시후 다시 이용해 주시기 바랍니다.' };
   }
 
   return data;
@@ -96,7 +96,7 @@ export async function login(state: ApiRes<User> | null, formData: FormData | Use
 
   }catch(error){ // 네트워크 오류 처리
     console.error(error);
-    return { ok: 0, message: '일시적인 네트워크 문제가 발생했습니다.' };
+    return { ok: 0, message: '일시적인 네트워크 문제가 발생했습니다. 잠시후 다시 이용해 주시기 바랍니다.' };
   }
   
   return data;
