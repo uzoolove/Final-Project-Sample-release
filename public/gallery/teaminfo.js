@@ -27,8 +27,8 @@ const teamInfo = {
     {
       id: 3,
       name: "SE.MO",
-      leader: "이훈진",
-      members: ["김경민", "박시운", "조한솔"],
+      leader: "조한솔",
+      members: ["김경민", "박시운", "이훈진"],
       projectName: "SE.MO",
       projectTopic: "대학교 기숙사 전용 거래 플랫폼",
       notionLink: "https://www.notion.so/3-SE-MO-22973873401a806cb733c394f8e888f6",
@@ -39,8 +39,8 @@ const teamInfo = {
     {
       id: 4,
       name: "4랑둥이",
-      leader: "이호정",
-      members: ["남상호", "노현수", "박준환"],
+      leader: "박준환",
+      members: ["남상호", "노현수", "이호정"],
       projectName: "4vely",
       projectTopic: "반려식물 판매, 플렌테리어, 커뮤니티",
       notionLink: "https://www.notion.so/4-4-22973873401a8069bf19d352fbf11a01",
@@ -54,7 +54,7 @@ const teamInfo = {
       leader: "최영준",
       members: ["김재현", "김지연", "정원식"],
       projectName: "oguogu",
-      projectTopic: "농산물 쇼핑몰, 오픈마켓, 펀딩, 구독, 관광체험",
+      projectTopic: "농산물 쇼핑몰, 오픈마켓, 구독, 관광체험",
       notionLink: "https://www.notion.so/5-22973873401a8013b3b3dd8daea79352",
       githubLink: "https://github.com/FRONTENDBOOTCAMP-13th/Final-05-oguogu",
       figmaLink: "https://www.figma.com/design/uf64A0qSYkB1325kaSbAzL/%EC%98%A4%EA%B5%AC%EC%98%A4%EA%B5%AC?node-id=44-2587&p=f&t=zeVCxXeZe3nychTT-0",
@@ -123,8 +123,8 @@ const teamInfo = {
     {
       id: 12,
       name: "왜시비조",
-      leader: "김연호",
-      members: ["김하영", "정유진", "조현수"],
+      leader: "조현수",
+      members: ["김연호", "김하영", "정유진"],
       projectName: "WhySIBI",
       projectTopic: "자취생 상품 판매 + 커뮤니티",
       notionLink: "https://www.notion.so/12-22973873401a808d8008f3b17ddf0ca8",
@@ -159,10 +159,10 @@ const teamInfo = {
     {
       id: 15,
       name: "Team XV",
-      leader: "최동환",
-      members: ["배희정", "임지윤", "황수곤"],
+      leader: "임지윤",
+      members: ["배희정", "최동환", "황수곤"],
       projectName: "HOLATAJA",
-      projectTopic: "타건음을 들을 수 있는 키보드 판매",
+      projectTopic: "타건음을 들을 수 있는 키보드판매샵",
       notionLink: "https://www.notion.so/15-Team-XV-22973873401a80e59ce5c5ec008b69f0",
       githubLink: "https://github.com/FRONTENDBOOTCAMP-13th/Final-15-HOLATAJA",
       figmaLink: "https://www.figma.com/design/gshuWliAJBwkmbibtUSJAP/Final_TEAM-XV?node-id=50-808&p=f&t=8SIAzpenrE4WYKCj-0",
@@ -170,5 +170,5 @@ const teamInfo = {
     }
   ]
 }
-
+  
 export default teamInfo;
