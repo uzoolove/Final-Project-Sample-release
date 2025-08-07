@@ -41,9 +41,9 @@ export async function createPost(state: ApiRes<Post> | null, formData: FormData)
     data = await res.json();
 
     if(data.ok){
-      // 현재 시간에서 10초 후 한국 시간으로 생성
+      // 현재 시간에서 30초 후 한국 시간으로 생성
       const now = new Date();
-      now.setSeconds(now.getSeconds() + 10); // 10초 후
+      now.setSeconds(now.getSeconds() + 30); // 30초 후
 
       // UTC 시간에 9시간을 더해서 한국 시간으로 변환
       const koreaTime = new Date(now.getTime() + (9 * 60 * 60 * 1000));
@@ -56,11 +56,10 @@ export async function createPost(state: ApiRes<Post> | null, formData: FormData)
       const minutes = String(koreaTime.getUTCMinutes()).padStart(2, '0');
       const seconds = String(koreaTime.getUTCSeconds()).padStart(2, '0');
       
-      const formatted = `${year}.${month}.${day} ${hours}:${minutes}:${seconds}`;
+      const time = `${year}.${month}.${day} ${hours}:${minutes}:${seconds}`;
 
       console.log('현재 UTC 시간:', now.toISOString());
-      console.log('생성된 한국 시간:', formatted);
-      console.log('한국 시간 UTC 객체:', koreaTime.toISOString());
+      console.log('생성된 한국 시간:', time);
 
       // 게시글 생성 후 1시간 후에 통계를 이메일로 전송하도록 스케줄러 등록
       const schedulerRes = await fetch(`${API_URL}/scheduler`, {
@@ -74,7 +73,7 @@ export async function createPost(state: ApiRes<Post> | null, formData: FormData)
           name: '이메일 전송',
           description: '게시글 생성 후 1시간 후 통계 이메일 전송',
           endpoint: `https://lion-board-tau.vercel.app/api/scheduler/posts/${data.item._id}`,
-          time: formatted,
+          time,
         }),
       });
 

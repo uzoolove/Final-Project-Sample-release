@@ -34,6 +34,8 @@
         overflow: hidden;
         box-shadow: 0 4px 15px rgba(0,0,0,0.12);
         background: white;
+        min-width: 380px;
+        flex-shrink: 0;
       }
 
       .card:hover {
@@ -201,11 +203,98 @@
       }
 
       .container {
-        max-width: 1200px;
+        max-width: 2800px;
       }
 
       .team-members strong {
         color: var(--likelion-orange);
+      }
+
+      /* 커스텀 그리드 시스템 - 최대 7개 카드 배치 */
+      @media (min-width: 1400px) {
+        .col-xxl-1 {
+          flex: 0 0 calc(14.285714% - 1.285714rem) !important;
+          width: calc(14.285714% - 1.285714rem) !important;
+          min-width: 380px;
+        }
+      }
+
+      @media (min-width: 1800px) {
+        .col-xxxl-1 {
+          flex: 0 0 calc(14.285714% - 1.285714rem) !important;
+          width: calc(14.285714% - 1.285714rem) !important;
+          min-width: 380px;
+        }
+      }
+
+      /* 카드 컨테이너 조정 */
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        justify-content: center;
+      }
+
+      .row > * {
+        flex: 0 0 auto;
+        min-width: 380px;
+        max-width: calc(100% - 1.5rem);
+      }
+
+      /* 반응형 조정 */
+      @media (max-width: 576px) {
+        .row > * {
+          min-width: 100%;
+          max-width: 100%;
+        }
+      }
+
+      @media (min-width: 576px) and (max-width: 767px) {
+        .row > * {
+          min-width: calc(50% - 0.75rem);
+          max-width: calc(50% - 0.75rem);
+        }
+      }
+
+      @media (min-width: 768px) and (max-width: 991px) {
+        .row > * {
+          min-width: calc(33.333% - 1rem);
+          max-width: calc(33.333% - 1rem);
+        }
+      }
+
+      @media (min-width: 992px) and (max-width: 1199px) {
+        .row > * {
+          min-width: calc(25% - 1.125rem);
+          max-width: calc(25% - 1.125rem);
+        }
+      }
+
+      @media (min-width: 1200px) and (max-width: 1399px) {
+        .row > * {
+          min-width: calc(16.666% - 1.25rem);
+          max-width: calc(16.666% - 1.25rem);
+        }
+      }
+
+      @media (min-width: 1400px) {
+        .row > * {
+          min-width: calc(14.285714% - 1.285714rem);
+          max-width: calc(14.285714% - 1.285714rem);
+        }
+      }
+
+      /* 7개 카드 배치를 위한 추가 조정 */
+      @media (min-width: 1600px) {
+        .container {
+          max-width: 3200px;
+        }
+      }
+
+      @media (min-width: 2000px) {
+        .container {
+          max-width: 3600px;
+        }
       }
     </style>
   </head>

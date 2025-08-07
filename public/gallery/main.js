@@ -5,7 +5,9 @@ const projectCardsContainer = document.getElementById('project-cards');
 if (projectCardsContainer) {
   teaminfo.teams.forEach((team) => {
     const card = document.createElement('div');
-    card.className = 'col-md-6 col-lg-4';
+    card.className = 'col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1';
+    card.style.minWidth = '380px';
+    card.style.flex = '0 0 calc(14.285714% - 1.285714rem)';
     
     card.innerHTML = `
       <div class="card ${team.deployUrl ? 'clickable-card' : ''}" data-deploy-url="${team.deployUrl || ''}">
